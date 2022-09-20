@@ -36,4 +36,19 @@ for (let i = 0; i < formInputs.length; i++) {
 
 formBtn.addEventListener("click", function() {
   alert("Form Submitted");
-});
+  sendemail();  
+}
+);
+function sendemail(){
+    Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "kevinpoly659@gmail.com",
+    Password : "69D82E012E23D6E5ED536A83070A344310A3",
+    To : "kevinpoly350@gmail.com",
+    From : "kevinpoly659@gmail.com",
+    Subject : document.getElementById("name").value,
+    Body : document.getElementById("subject").value +" "+ document.getElementById("msg").value +" "+ "\n Please contact me at \n" +" "+ document.getElementById("ml").value 
+  }).then(
+    message => alert(message)
+  );
+}
