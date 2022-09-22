@@ -23,38 +23,27 @@ for (let i = 0; i < formInputs.length; i++) {
 
     // check form validation
     if (form.checkValidity()) {
-      formBtn.removeAttribute("disabled");
-      
+     return true
     } else {
-      formBtn.setAttribute("disabled", "");
+      return false  
     }
 
   });
 }
+$("#submit-form").submit((e)=>{
+    e.preventDefault()
+    $.ajax({
+        url:"https://script.google.com/macros/s/AKfycbyydDb79E7i-jkU4X2bSVsASO4nNYXrnOxWmj0T4ClnXEl3mXS1yWWa1JimJaTavNpgtg/exec",
+        data:$("#submit-form").serialize(),
+        method:"post",
+        success:function (response){
+            alert("Form submitted successfully")
+            window.location.reload()
+            //window.location.href="https://google.com"
+        },
+        error:function (err){
+            alert("Something Error")
 
-
-
-formBtn.addEventListener("click", function() {
-  alert("Form Submitted");
-  sendemail();  
-}
-);
-function sendemail(){
-    Email.send({
-    Host : "smtp.elasticemail.com",
-    Username : "kevinpoly659@gmail.com",
-    Password : "69D82E012E23D6E5ED536A83070A344310A3",
-    To : "kevinpoly350@gmail.com",
-    From : "kevinpoly659@gmail.com",
-    Subject : document.getElementById("name").value,
-    Body : document.getElementById("subject").value +" "+ document.getElementById("msg").value +" "+ "\n Please contact me at \n" +" "+ document.getElementById("ml").value 
-  }).then(
-    message => alert(message)
-  );
-}
-const navLinks = document.querySelectorAll(".nav-item")
-const menuToggle = document.getElementById("navbarNav")
-const bsCollapse = new bootstrap.Collapse(menuToggle)
-navLinks.forEach((l) => {
-    l.addEventListener('click', () => { bsCollapse.toggle() })
+        }
+    })
 })

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css" integrity="sha512-vebUliqxrVkBy3gucMhClmyQP9On/HAWQdKDXRaAlb/FKuTbxkjPKUyqVOxAcGwFDka79eTF+YXwfke1h3/wfg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar">
@@ -278,21 +279,21 @@
                     </div>
 
                     <div class="col-lg-8" data-aos="fade-up" data-aos-delay="300">
-                        <form action="#" class="row g-lg-3 gy-3" data-form>
+                        <form id="submit-form" action="" class="row g-lg-3 gy-3" data-form>
                             <div class="form-group col-md-6">
-                                <input id="name" type="text" class="form-control" placeholder="Enter your name" data-form-input>
+                                <input id="name" name="name" type="text" class="form-control" placeholder="Enter your name" data-form-input required>
                             </div>
                             <div class="form-group col-md-6">
-                                <input id="ml" type="email" class="form-control" placeholder="Enter your email" data-form-input>
+                                <input id="ml" name="email" type="email" class="form-control" placeholder="Enter your email" data-form-input required>
                             </div>
                             <div class="form-group col-12">
-                                <input id="subject" type="text" class="form-control" placeholder="Enter subject" data-form-input>
+                                <input id="subject" name="Subject" type="text" class="form-control" placeholder="Enter subject" data-form-input required>
                             </div>
                             <div class="form-group col-12">
-                                <textarea id="msg" name="" rows="4" class="form-control" placeholder="Enter your message" data-form-input></textarea>
+                                <textarea id="msg" name="message" rows="4" class="form-control" placeholder="Enter your message" data-form-input required></textarea>
                             </div>
                             <div class="form-group col-12 d-grid">
-                                <button type="submit" data-form-btn class="btn btn-brand" disabled>Contact me</button>
+                                <button type="submit" data-form-btn class="btn btn-brand">Contact me</button>
                             </div>
                         </form>
                     </div>
