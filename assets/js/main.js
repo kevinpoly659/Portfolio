@@ -47,6 +47,7 @@ $("#submit-form").submit((e)=>{
         }
     })
 })
+//navbar
 const navLinks = document.querySelectorAll('.nav-item')
 const menuToggle = document.getElementById('navbarNav')
 const bsCollapse = new bootstrap.Collapse(menuToggle)
